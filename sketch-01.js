@@ -10,7 +10,7 @@ const settings = {
 }
 
 let manager;
-let text = "impressions";
+
 
 const degToRad = (degrees) => {
   return (degrees / 180) * Math.PI;
@@ -56,6 +56,7 @@ const sketch = async () => {
       context.scale(random.range(0.1, 2), random.range(0.2, 0.5));
 
       context.scale(random.range(1, 3), 1);
+      
       context.beginPath();
       //context.rect(x, y, w, h);
       //context.rect(0, 0, w, h); //remove this and add line 28 if use rotate
@@ -66,24 +67,15 @@ const sketch = async () => {
       context.save();
       context.translate(cx, cy);
       context.rotate(-angle);
-
-
-      context.lineWidth = random.range(5, 20);
       
 
-      context.beginPath();
-      context.arc(
-        0,
-        0,
-        radius * random.range(0.7, 1.3),
-        slice * random.range(1, -8),
-        slice * random.range(1, 5)
-      );
       context.stroke();
-
       context.restore();
+      
+     
     }
   };
+    
 };
 
 canvasSketch(sketch, settings);
